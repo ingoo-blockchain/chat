@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/board/delete" method="post">
+        <input type="hidden" name="idx" value="{{result.idx}}">
+        <table>
+            <tr>
+                <th>작성자</th>
+                <td>{{result.writer}}</td>
+            </tr>
+            <tr>
+                <th>작성일</th>
+                <td>{{result.date}}</td>
+            </tr>
+            <tr>
+                <th>제목</th>
+                <td>{{result.subject}}</td>
+            </tr>
+            <tr>
+                <th>내용</th>
+                <td>
+                    {{result.content}}
+                </td>
+            </tr>
+        </table>
+
+        <a href="/board/list">리스트</a>
+        <a href="/board/modify/{{result.idx}}">수정</a>
+        <input type="submit" value="글삭제">
+    </form>
+</body>
+</html>
